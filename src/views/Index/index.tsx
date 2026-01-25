@@ -13,7 +13,6 @@ export default function Index() {
 
   return (
     <>
-      <div className="color-b font-11px mb-1">使用mascss样式</div>
       <div className={styles.title}>hello,mas-cms</div>
     </>
   );

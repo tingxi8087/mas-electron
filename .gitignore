@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 package-lock.json
-
+.cursor
 node_modules
 dist
 dist-ssr

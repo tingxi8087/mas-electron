@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
     errorElement: <>404</>,
     children: [
       {
-        path: "/index",
+        path: "/",
         element: <Index />,
       },
     ],

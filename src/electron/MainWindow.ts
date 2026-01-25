@@ -1,6 +1,5 @@
-import { webBaseUrl } from "@/utils";
 import { BrowserWindow } from "electron";
-import { preloadPath } from "./store";
+import { preloadPath, webBaseUrl } from "./store.js";
 
 export class MainWindow {
   window: BrowserWindow;

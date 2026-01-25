@@ -1,6 +1,6 @@
 import { app, ipcMain } from "electron";
-import { MainWindow } from "./MainWindow";
-import { eStore } from "./store";
+import { MainWindow } from "./MainWindow.js";
+import { eStore } from "./store.js";
 
 const initWindow = () => {
   eStore.mainWindow = new MainWindow();
@@ -15,6 +15,7 @@ app.whenReady().then(() => {
     },
   );
   ipcMain.handle("app:quit", () => {});
+  initWindow();
 });
 
 // 在退出前强制关闭所有窗口
@@ -24,4 +25,4 @@ app.on("before-quit", () => {});
 app.on("window-all-closed", () => {});
 
 app.on("activate", () => {});
-initWindow();
+

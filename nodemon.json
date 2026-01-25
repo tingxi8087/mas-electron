@@ -1,0 +1,7 @@
+{
+  "watch": ["src/electron"],
+  "ext": "ts",
+  "ignore": ["node_modules", "dist"],
+  "exec": "bun run compile:electron && electron .",
+  "delay": 500
+}

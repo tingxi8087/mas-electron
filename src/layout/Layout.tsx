@@ -6,8 +6,6 @@ export default function Layout() {
   const navigate = useNavigate();
   return (
     <div>
-      <Button onClick={() => navigate("/index")}>跳转到首页</Button>
-      <TestPublic />
       <Outlet />
     </div>
   );
