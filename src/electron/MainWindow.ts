@@ -14,7 +14,6 @@ export class MainWindow {
         preload: preloadPath,
       },
     });
-    console.log(isProduction,"##F");
     // 根据环境变量选择加载方式
     if (isProduction) {
       // 生产环境：加载本地打包后的文件
@@ -22,7 +21,8 @@ export class MainWindow {
       this.window.loadFile(buildPath);
     } else {
       // 开发环境：加载开发服务器地址
-      this.window.loadURL(`${webBaseUrl}/#/index`);
+      // HashRouter 会自动处理路由，直接加载根路径即可
+      this.window.loadURL(webBaseUrl);
     }
 
     this.window.show();

@@ -17,7 +17,8 @@
     "dist:win": "npm run build && electron-builder --win",
     "dist:linux": "npm run build && electron-builder --linux"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@ant-design/icons": "^5.2.6",
     "antd": "^5.6.0",
     "axios": "^1.4.0",
@@ -25,9 +26,7 @@
     "mas-encrypt": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2"
-  },
-  "devDependencies": {
+    "react-router-dom": "^6.11.2",
     "electron": "^40.0.0",
     "@types/node": "^20.3.1",
     "@types/react": "^18.0.37",
@@ -51,6 +50,11 @@
     "directories": {
       "output": "build"
     },
+    "compression": "maximum",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
     "files": [
       "dist/**/*",
       "package.json"
@@ -59,7 +63,10 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["x64", "arm64"]
+          "arch": [
+            "x64",
+            "arm64"
+          ]
         }
       ],
       "category": "public.app-category.utilities"
@@ -68,7 +75,10 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64", "ia32"]
+          "arch": [
+            "x64",
+            "ia32"
+          ]
         }
       ]
     },
