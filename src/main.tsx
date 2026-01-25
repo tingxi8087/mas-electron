@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.less";
+import "./tailwind.css";
 import { router } from "./router";
 import { RouterProvider } from "react-router-dom";
 
@@ -8,7 +9,7 @@ document.title = "ai平台";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 const env = process.env.NODE_ENV;

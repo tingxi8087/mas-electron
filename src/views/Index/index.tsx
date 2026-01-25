@@ -14,6 +14,9 @@ export default function Index() {
   return (
     <>
       <div className={styles.title}>hello,mas-cms</div>
+      <div className="bg-blue-500 text-white p-4 rounded-lg">
+        使用Tailwind类的元素
+      </div>
     </>
   );
 }
