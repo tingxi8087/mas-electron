@@ -15,8 +15,9 @@ const __dirname = path.dirname(__filename);
 
 /**
  * 是否为生产环境
+ * 使用 app.isPackaged 来判断是否已打包，这是 Electron 推荐的方式
  */
-export const isProduction = process.env.NODE_ENV === "production" || !process.env.ELECTRON_IS_DEV;
+export const isProduction = app.isPackaged || process.env.NODE_ENV === "production";
 
 /**
  * preload 文件路径
@@ -38,5 +39,5 @@ export const getBuildPath = (): string => {
   // 在生产环境中，使用 app.getAppPath() 获取应用路径
   // build 文件夹会被打包到应用目录中
   const appPath = app.getAppPath();
-  return path.join(appPath, "build", "index.html");
+  return path.join(appPath, "/dist/web", "index.html");
 };
