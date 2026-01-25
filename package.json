@@ -7,16 +7,14 @@
   "scripts": {
     "start": "concurrently \"npm run dev:web\" \"npm run dev:electron\"",
     "dev:web": "vite",
-    "compile:electron": "tsc -p tsconfig.electron.json",
     "dev:electron": "nodemon",
-    "build:web": "vite build",
-    "build:electron": "tsc -p tsconfig.electron.json",
-    "build": "npm run build:web && npm run build:electron",
-    "dist": "npm run build && npm run minify:electron && electron-builder",
-    "dist:mac": "npm run build && npm run minify:electron && electron-builder --mac",
-    "dist:win": "npm run build && npm run minify:electron && electron-builder --win",
-    "dist:linux": "npm run build && npm run minify:electron && electron-builder --linux",
-    "minify:electron": "node scripts/minify-electron.js"
+    "build": "npm run buildFile && electron-builder",
+    "build:mac": "npm run buildFile && electron-builder --mac",
+    "build:win": "npm run buildFile && electron-builder --win",
+    "compile:electron": "tsc -p tsconfig.electron.json",
+    "compile:web": "vite build",
+    "minify:electron": "node scripts/minify-electron.js",
+    "buildFile": "npm run compile:web && npm run compile:electron && npm run minify:electron "
   },
   "dependencies": {},
   "devDependencies": {

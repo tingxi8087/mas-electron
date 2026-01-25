@@ -27,20 +27,6 @@ async function minifyElectronFiles() {
           unused: true,                   // 移除未使用代码
           dead_code: true,                // 移除死代码
           toplevel: true,                 // 在顶层作用域移除未使用变量
-          side_effects: true,             // 基于副作用移除代码
-          passes: 3                       // 多次压缩以获得最佳效果
-        },
-        mangle: {
-          properties: {
-            regex: /.*/,                  // 对所有属性名进行混淆（不仅仅是双下划线开头的）
-            reserved: [],                 // 不保留任何属性名，全部混淆
-            undeclared: true              // 混淆未声明的全局变量
-          },
-          toplevel: true,                 // 混淆顶级作用域变量名
-          keep_fnames: false,             // 不保留函数名
-          keep_classnames: false,         // 不保留类名
-          reserved: [],                   // 不保留任何名称，全部混淆
-          safari10: false                 // 不针对Safari 10特殊处理
         },
         format: {
           comments: false,                // 移除所有注释
