@@ -13,7 +13,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "declaration": false,
-    "sourceMap": true
+    "sourceMap": false
   },
   "include": ["src/electron/**/*", "src/types/**/*"],
   "exclude": ["node_modules", "dist"]
